@@ -1,0 +1,7 @@
+instances:
+  - name: "node-1"
+    dns:
+      - "elasticsearch"
+      - "localhost"
+    ip:
+      - "172.19.0.3"

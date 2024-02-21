@@ -8,6 +8,9 @@ ENV ELASTICSEARCH_PORT="9200"
 # The directory for running scripts
 WORKDIR /scripts
 
+RUN mkdir -p elastic_data/
+RUN chown -R 1000:root elastic_data/
+
 # Installing required packages and libraries for your project and the script
 RUN apk add --update --no-cache libxml2-dev libxslt-dev bash \
     && apk add --update --no-cache --virtual .build_deps build-base libffi-dev \

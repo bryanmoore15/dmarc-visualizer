@@ -11,19 +11,13 @@ services:
   
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.5
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.1
     environment:
       - discovery.type=single-node
       - "ES_JAVA_OPTS=-Xms750m -Xmx750m"
-      - xpack.security.enabled=true
-      - ELASTIC_PASSWORD=YourElasticPasswordHere
-      - xpack.security.transport.ssl.enabled: true
-      - xpack.security.transport.ssl.verification_mode: certificate
-      - xpack.security.transport.ssl.certificate: /usr/share/elasticsearch/config/node-1/node-1.crt
-      - xpack.security.transport.ssl.key: /usr/share/elasticsearch/config/node-1/node-1.key
-      - xpack.security.transport.ssl.certificate_authorities: [ "/usr/share/elasticsearch/config/ca/ca.crt" ]
+      - "xpack.security.enabled=false"
+    volumes:
       - ./elastic_data:/usr/share/elasticsearch/data
-      - ./elastic_certs:/usr/share/elasticsearch/config/certs
 
 
   grafana:

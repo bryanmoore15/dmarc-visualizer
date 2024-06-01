@@ -1,9 +1,9 @@
 # dmarc-visualizer
 
-To run this code, navigate to the correct directory using cd
-with Docker Desktop open, run docker-compose up
+To run this code, navigate to the correct directory using: cd /Users/bryanmoore/Documents/GitHub/dmarc-visualizer
+with Docker Desktop open, run: docker-compose up
 
-DMARC files are saved to the ./files folder via Apple Automator (Users/bryanmoore/Applications/dmarc-automator). The script to run the automation is located at /Users/bryanmoore/Library/LaunchAgents/com.bryanmoore.runmailscript.plist. The script is scheduled to run at 9 AM, 12 PM, and 3PM daily.
+DMARC files are saved to the ./files folder via Apple Automator (Users/bryanmoore/Applications/dmarc-automator). The script to run the automation is located at /Users/bryanmoore/Library/LaunchAgents/com.bryanmoore.runmailscript.plist. The script is scheduled to run at 9 AM, 12 PM, 3PM, and 5pm daily.
 
 -- to load the script:                  launchctl load ~/Library/LaunchAgents/com.bryanmoore.runmailscript.plist
 -- to offload/unpack the script:        launchctl unload ~/Library/LaunchAgents/com.bryanmoore.runmailscript.plist
